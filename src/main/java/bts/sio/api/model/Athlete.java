@@ -29,13 +29,14 @@ public class Athlete {
     @JoinColumn(name = "pays_id")
     private Pays pays;
 
+    @ManyToOne
+    @JoinColumn(name = "sport_id")
+    private Sport sport;
+
     @ManyToMany
     @JoinTable( name = "athlete_olympiade",
             joinColumns = @JoinColumn( name = "athlete_id" ),
             inverseJoinColumns = @JoinColumn( name = "olympiade_id" ) )
     private List<Olympiade> olympiades = new ArrayList<>();
-
-
-
 
 }

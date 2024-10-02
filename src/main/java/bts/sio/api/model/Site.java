@@ -5,9 +5,11 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "sport")
+@Table(name = "site")
 
-public class Sport {
+public class Site {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,12 +17,10 @@ public class Sport {
     @Column(name="nom")
     private String nom;
 
-    @Column(name="descriptif")
-    private String descriptif;
+    @Column(name="rue")
+    private String rue;
 
-    @ManyToOne
-    @JoinColumn(name = "id_site")
-    private Site site;
+    @Column(name="codepostal")
+    private String codepostal;
+
 }
-
-
